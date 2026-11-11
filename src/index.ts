@@ -1,0 +1,1 @@
+export function add(a: number, b: number): number { return a + b; } export class SignalPilot { constructor(private readonly amplitude: number) {} process(signal: number[]): number[] { return signal.map(v => this.amplitude * v); } }
