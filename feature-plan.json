@@ -1,1 +1,36 @@
-{"schema_version":1,"current_feature":"feat-add-signal-pilot","features":[{"id":"feat-add-signal-pilot","title":"Add add function and SignalPilot class with tests","status":"done","acceptance":["Exports add function and SignalPilot class","Tests verify add(2,3)=5 and SignalPilot processes signals correctly"],"implementation":["src/index.ts"],"tests":["src/__tests__/index.test.ts"]}]}
+{
+  "schema_version": 1,
+  "current_feature": "feat-signal-history",
+  "features": [
+    {
+      "id": "feat-add-signal-pilot",
+      "title": "Add add function and SignalPilot class with tests",
+      "status": "done",
+      "acceptance": [
+        "Exports add function and SignalPilot class",
+        "Tests verify add(2,3)=5 and SignalPilot processes signals correctly"
+      ],
+      "implementation": [
+        "src/index.ts"
+      ],
+      "tests": [
+        "src/__tests__/index.test.ts"
+      ]
+    },
+    {
+      "id": "feat-signal-history",
+      "title": "SignalPilot bounded history buffer",
+      "status": "done",
+      "acceptance": [
+        "SignalPilot accepts optional maxBuffer and retains the most recent processed values",
+        "process() output is unchanged; history exposes a bounded copy of processed values"
+      ],
+      "implementation": [
+        "src/index.ts"
+      ],
+      "tests": [
+        "src/__tests__/index.test.ts"
+      ]
+    }
+  ]
+}

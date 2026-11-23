@@ -18,4 +18,12 @@ describe('SignalPilot', () => {
     const pilot = new SignalPilot(2);
     expect(pilot.process([1,2,3])).toEqual([2,4,6]);
   });
+
+  it('retains a bounded history of processed signals', () => {
+    const pilot = new SignalPilot(2, 3);
+    expect(pilot.process([1,2,3,4])).toEqual([2,4,6,8]);
+    expect(pilot.history).toEqual([4,6,8]);
+    pilot.process([5]);
+    expect(pilot.history).toEqual([6,8,10]);
+  });
 });
