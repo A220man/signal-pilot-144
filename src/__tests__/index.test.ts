@@ -25,5 +25,15 @@ describe('SignalPilot', () => {
     expect(pilot.history).toEqual([4,6,8]);
     pilot.process([5]);
     expect(pilot.history).toEqual([6,8,10]);
+
+  it("resets history buffer", () => {
+    const pilot = new SignalPilot(2, 3);
+    pilot.process([1,2,3,4]);
+    expect(pilot.history).toEqual([4,6,8]);
+    pilot.reset();
+    expect(pilot.history).toEqual([]);
+    pilot.process([5]);
+    expect(pilot.history).toEqual([10]);
+  });
   });
 });

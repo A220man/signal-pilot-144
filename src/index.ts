@@ -14,4 +14,5 @@ export class SignalPilot {
     return out;
   }
   get history(): number[] { return [...this.buffer]; }
+  reset(): void { this.buffer.splice(0); }
 }
